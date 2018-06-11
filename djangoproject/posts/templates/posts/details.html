@@ -1,0 +1,20 @@
+{% extends 'posts/layout.html' %}
+
+    {% block content %}
+    <h3 class="center text-white bg-danger">{{post.title}}</h3>
+
+    <div class="container-fluid row">
+        <div class="row">
+            {{post.title}}
+        </div>
+        <div class="row">
+            {{post.body}}
+        </div>
+        <div class="row">
+            {{post.created_at}}
+        </div>
+        <a href="/posts">Back to Posts</a>
+    </div>
+
+
+    {% endblock %}
