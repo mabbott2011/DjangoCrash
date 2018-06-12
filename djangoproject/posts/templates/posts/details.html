@@ -1,20 +1,26 @@
 {% extends 'posts/layout.html' %}
 
     {% block content %}
-    <h3 class="center text-white bg-danger">{{post.title}}</h3>
 
-    <div class="container-fluid row">
-        <div class="row">
-            {{post.title}}
-        </div>
-        <div class="row">
-            {{post.body}}
-        </div>
-        <div class="row">
-            {{post.created_at}}
-        </div>
-        <a href="/posts">Back to Posts</a>
-    </div>
+          <div class="row posttitle">
+                <h3>{{post.title}}</h3>
+                {% if user.is_authenticated %}
+                    <p><a href="/admin/posts/posts/{{post.id}}/change">Edit Post</a></p>
+                {% endif %}
+          </div>
+          <div class="row postbody">
+            <div style="padding-bottom:15px">
+                {{post.body}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="offset-md-4 col-md-4" id="backtopost">
+                <a href="/posts">Back to Posts</a>
+            </div>
+            <div class="col-md-4">
+                <p class="postdate">{{post.created_at}}</p>
+            </div>
+          </div>
 
 
     {% endblock %}
