@@ -3,7 +3,7 @@ import pyperclip
 import os
 
 link = "https://www.youtube.com/watch?v=D6esTdOLXh4"
-sdfsdfs
+
 
 pyperclip.copy(link)
 print ('Link has been copied to your clipboard')
